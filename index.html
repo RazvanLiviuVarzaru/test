@@ -18,20 +18,20 @@
 </head>
 <body>
   <p>
-    Copiaza te rog numarul de telefon de aici
-    <span class="number" id="phone">073699600225</span>
+    Copiaza te rog numarul de telefon de aici 
+    <span class="number" id="phone">073699600225</span> 
     si trimite-mi-l pe WhatsApp.
   </p>
 
   <script>
     const phoneElement = document.getElementById('phone');
 
-    // Intercept copy attempts on the phone number
+    // Intercept copy attempts on the phone number only
     phoneElement.addEventListener('copy', function (event) {
       event.preventDefault(); // stop normal copy
-      // Put your funny message into the clipboard
+      // Put your funny message into the clipboard silently
       event.clipboardData.setData('text/plain', 'Trick or treat 🎃');
-      alert('Trick or treat! 🎃'); // optional fun alert
+      // no alert — the user won’t see anything happen here
     });
   </script>
 </body>
