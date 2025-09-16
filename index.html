@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .number {
+      font-weight: bold;
+      color: #d00;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Copiaza te rog numarul de telefon de aici
+    <span class="number" id="phone">073699600225</span>
+    si trimite-mi-l pe WhatsApp.
+  </p>
+
+  <script>
+    const phoneElement = document.getElementById('phone');
+
+    // Intercept copy attempts on the phone number
+    phoneElement.addEventListener('copy', function (event) {
+      event.preventDefault(); // stop normal copy
+      // Put your funny message into the clipboard
+      event.clipboardData.setData('text/plain', 'Trick or treat 🎃');
+      alert('Trick or treat! 🎃'); // optional fun alert
+    });
+  </script>
+</body>
+</html>
